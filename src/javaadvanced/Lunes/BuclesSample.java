@@ -8,7 +8,7 @@ package javaadvanced.Lunes;
  * Simple For,
  * For-each
  * Labeled For
- * @author CC-03
+ * @author Ramses Santos
  */
 public class BuclesSample {
     public static void main(String[] args) {

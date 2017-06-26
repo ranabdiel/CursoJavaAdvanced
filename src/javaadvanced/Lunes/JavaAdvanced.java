@@ -7,7 +7,7 @@ package javaadvanced.Lunes;
 
 /**
  *
- * @author CC-03
+ * @author Ramses Santos
  */
 
 /*

@@ -7,7 +7,7 @@ package javaadvanced.Lunes;
 
 /**
  *
- * @author CC-03
+ * @author Ramses Santos
  */
 public class BWhile {
     public static void main(String[] args) {

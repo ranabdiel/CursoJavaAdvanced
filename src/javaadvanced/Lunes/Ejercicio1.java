@@ -15,7 +15,7 @@ public class Ejercicio1 {
      */
     
     public static void main(String[] args) {
-        Fibonacci(10);
+        Fibonacci(9);
         EsPrimo(6);
         Factorial(5);
         Burbuja();
@@ -29,16 +29,16 @@ public class Ejercicio1 {
         int res = 1;
         
         for(int i = 2; i <= n; i++){
-            System.out.println(res);
+            System.out.print(res + " ");
             res = aux + res;
             aux = res - aux;
         }
         
-        System.out.println("****************************");
+        System.out.println("\n****************************");
     }
     
     private static void EsPrimo(int n){
-        System.out.println("******  EsPrimo  *********");
+        System.out.println("********  EsPrimo  *********");
         
         int div  = n/2;
         
@@ -68,37 +68,42 @@ public class Ejercicio1 {
             res += res * i;
         }
         
-        System.out.println("El Factorial es: " + res);
+        System.out.println("El Factorial de "+ n +" es: " + res);
         
         System.out.println("****************************");
     }
     
     private static void Burbuja(){
-        System.out.println("******  Burbuja  *********");
+        System.out.println("*******  Burbuja  **********");
         
         int[] res = {2, 50, 62, 40, 8, 45};
         int arr = res.length;
         int temp = 0;
+        System.out.println("***** Antes de ordenar *****");
         
-        for(int i = 0; i < arr; i++){
-            //System.out.println(res[i]);
+        for(int i = 0; i < res.length; i++){
+            System.out.print(res[i] + " ");
+        }
+        
+        for(int i = 0; i < arr; i++)
+        {
             for(int j = 1; j < (arr - i); j++ )
             {
-                //System.out.println(res[j]);
-                if(res[j-1] > res[j]){
-                    System.out.println(res[i] + " - " + res[j]);
+                if(res[j-1] > res[j])
+                {
                     int aux = res[j-1];
                     res[j-1] = res[j];
                     res[j] = aux;
                 }
             }
         }
-        System.out.println("****************************");
+        
+        System.out.println("\n********* Ordenado *********");
         
         for(int i = 0; i < res.length; i++){
-            System.out.println(res[i]);
+            System.out.print(res[i] + " ");
         }
         
-        System.out.println("****************************");
+        System.out.println("\n****************************");
     }
 }
