@@ -51,42 +51,23 @@ package javaadvanced.Lunes.Poo;
  *
  * Variables de instancia
  * Mujer mujes = new Mujer();
+ * 
  * @author Ramses Santos
  */
-public class Bike {
+public class Bike 
+{
     public static void main(String[] args) {
+        show();
+    }
+    
+    public static void show(){
         MountainBike bici = new MountainBike();
         bici.setColor("Azul");
         bici.setVelocidad(6);
-        bici.show();
-    }
-}
-
-class MountainBike
-{
-    int velocidad;
-    String color;
-
-    public int getVelocidad() {
-        return velocidad;
-    }
-
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-    
-    public void show(){
+        
         String msg = "Soy una bici de montaña ";
-        msg += " y mi color es: " + getColor();
-        msg += " y tengo: " + getVelocidad();
+        msg += " y mi color es: " + bici.getColor();
+        msg += " y tengo: " + bici.getVelocidad();
         msg += " velocidades";
         
         System.out.println(msg);
