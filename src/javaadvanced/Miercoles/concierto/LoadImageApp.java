@@ -48,9 +48,9 @@ public class LoadImageApp extends Component {
         g.drawImage(img, 0, 0, null);
     }
 
-    public LoadImageApp() {
+    public LoadImageApp(String rutaImagen) {
        try {
-           img = ImageIO.read(new File("images/pelea1.png"));
+           img = ImageIO.read(new File(rutaImagen));
        } catch (IOException e) {
        }
 
@@ -74,8 +74,10 @@ public class LoadImageApp extends Component {
                 }
             });
 
-        f.add(new LoadImageApp());
+        f.add(new LoadImageApp("images/pelea1.png"));
         f.pack();
         f.setVisible(true);
+        f.setLocationRelativeTo(null);
+        f.setResizable(false);
     }
 }
