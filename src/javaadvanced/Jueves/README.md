@@ -1,4 +1,5 @@
-### ***PLANIFICACIÓN DE THREADS***
+### **PLANIFICACIÓN DE THREADS**
+---
 
 Un hilo demonio en Java es un hilo proveedor de servicios que proporciona servicios al hilo de usuario.
 
@@ -53,7 +54,8 @@ public class ThreadD extends Thread{
     }
 }
 ```
-**Sincronización**
+### **Sincronización**
+---
 
 La sincronización en JAVA es la capacidad de controlar el acceso de multiples hilos en cualquier recurso compartido.
 
