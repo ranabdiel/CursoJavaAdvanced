@@ -28,9 +28,11 @@ public class TestComicImagenes {
                 }
             });
 
+        f.setResizable(false);
         f.add(hi);
         f.pack();
         f.setVisible(true);
+        f.setLocationRelativeTo(null);
         
         Thread hilo = new Thread(hi);
         hilo.start();

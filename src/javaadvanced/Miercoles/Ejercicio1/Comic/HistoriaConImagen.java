@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
 public class HistoriaConImagen extends Component implements Runnable {
 
     BufferedImage peleaImagen;
-    int width = 180, height = 300, posicion = 0, x = 20, y = 30, segundos = 3;
+    int width = 180, height = 300, posicion = 0, x = 110, y = 30, segundos = 3;
 
     public HistoriaConImagen() throws IOException {
         peleaImagen = ImageIO.read(new File("images/pelea.png"));
@@ -28,7 +28,12 @@ public class HistoriaConImagen extends Component implements Runnable {
 
     @Override
     public Dimension getPreferredSize() {
-            return new Dimension(250, 350);
+            return new Dimension(400, 350);
+    }
+    
+    @Override
+    public Dimension getMaximumSize(){
+        return new Dimension(400, 350);
     }
 
     @Override
