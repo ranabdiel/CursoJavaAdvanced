@@ -1,5 +1,4 @@
 ## **Planificación De Threads**
----
 
 Un hilo demonio en Java es un hilo proveedor de servicios que proporciona servicios al hilo de usuario.
 
@@ -83,7 +82,6 @@ Desde JAVA 5, el paquete *java.util.concurrent.locks* contiene varias implementa
 
 
 ## **OutputStream vs InputStream**
----
 
 ### **Java I/O**
 ---
