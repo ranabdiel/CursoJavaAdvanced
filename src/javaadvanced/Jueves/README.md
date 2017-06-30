@@ -2,11 +2,11 @@
 
 Un hilo demonio en Java es un hilo proveedor de servicios que proporciona servicios al hilo de usuario.
 
-Su vida depende de los demas hilos, es decir si todos los demas hilos se mueren la JVM lo temina automaticamente.
+Su vida depende de los demas hilos, es decir si todos los demas hilos se mueren la JVM lo termina automáticamente.
 
 Hay muchos hilos demonios en java que se ejecutan automáticamente. Garbage Collector, finalizer, etc.
 
-JConsole en el simbolo del sistema, proporciona la informacion sobre las clases cargadas, uso de memoria, ejecucion de hilos etc.
+JConsole en el simbolo del sistema, proporciona la información sobre las clases cargadas, uso de memoria, ejecución de hilos etc.
 
 **Puntos importantes**
 
@@ -15,10 +15,10 @@ Un hilo en Java proporciona servicios a los hilos para brindar soporte a tareas 
 Su vida depende de los hilos de usuario.
 Es un hilo de baja prioridad.
 
-Java.lang.Thread provee dos metodos para el demonio:
+*__Java.lang.Thread:__* Provee dos métodos para el demonio:
 
-1. public setDaemon(boolean status) es usado para marcar el hilo actual, como un hilo demonio.
-2. public boolean isDaemon() revisa si el hilo actual es un demonio.
+1. *__public setDaemon(boolean status):__* Es usado para marcar el hilo actual, como un hilo demonio.
+2. *__public boolean isDaemon():__* Revisa si el hilo actual es un demonio.
 
 ```java
 package javaadvanced.Jueves;
@@ -61,24 +61,24 @@ La sincronización en JAVA es la capacidad de controlar el acceso de multiples h
 La sincronización es la mejor opción cuando queremos permitir que solo un hilo pueda acceder a recursos compartidos.
 
 La sincronización es principalmente usada para: 
-1. Prevenir la inteferencia de hilos.
+1. Prevenir la interferencia de hilos.
 2. Prevenir problemas de inconsistencia.
 
 **Tipos de Sincronización:**
 1. Procesos
 2. Hilos: Mutuamente Excluyentes
-    1. Metodo Sincronizado.
+    1. Método Sincronizado.
     2. Bloqueo Sincronizado.
     3. Sincronización Estática.
 
 **Cooperación:** Comunicación entre hilos.
-Exclusión Mutua: Ayuda a prevenir que los hilos interfieran entre si mnientras comparten ingormacion.
+Exclusión Mutua: Ayuda a prevenir que los hilos interfieran entre si mientras comparten información.
 
-**Bloqueo:** La siuncronizacino se basa en una entidad interna conocida como lick o monito. Cada objeto tiene un bloque asociado a el.
+**Bloqueo:** La sincronización se basa en una entidad interna conocida como lick o monito. Cada objeto tiene un bloque asociado a el.
 
 Por convención un hilo necesita un acceso consistente a los campos de un objeto, tiene que adquirir el bloqueo del objeto antes de acceder a ellos y a continuación liberar el bloqueo cuando se hace con ellos.
 
-Desde JAVA 5, el paquete *java.util.concurrent.locks* contiene varias implementaciones de bloqueo.
+Desde JAVA 5, el paquete *__java.util.concurrent.locks__* contiene varias implementaciones de bloqueo.
 
 
 ## **OutputStream vs InputStream**
@@ -104,10 +104,10 @@ Se llama stream porque es como un flujo de agua que sigue corriendo.
 En JAVA existen 3 streams que se crean para nuestro uso automaticamente.
 
 1. **System.out:** Flujo de salida estandar.
-2. **System.in:** Flujo de entrada estanbddar.
-3. **System.err:** Fluj de errores estandar.
+2. **System.in:** Flujo de entrada estandar.
+3. **System.err:** Flujo de errores estandar.
 
-``` Java
+```java
  System.out.print("Error");
  System.err.print("Error");
 ```
@@ -116,7 +116,11 @@ En JAVA existen 3 streams que se crean para nuestro uso automaticamente.
 ---
 
 Input: Lee.
+
 Output: Escribe.
+
+#### __BufferedOutputStream__
+---
 
 La clase JAVA BufferedOutputStream se utiliza para almacenar en un buffer un stream de salida.
 
@@ -136,12 +140,12 @@ __BufferedOutputStream(OutputStream os, int size):__
 
 Crea un nuevo flujo de salida que será almacenado en buffer el cual se utiliza para escribir los datos en el stream especificando el tamaño del bufer.
 
-### __Métodos:__
+#### __Métodos:__
 ---
 
 __void write(int b):__
 
-Escribe el byte especificando en el stream de salida almacenadoen buffer.
+Escribe el byte especificando en el stream de salida almacenado en buffer.
 
 __void write(byte[] b, int off, int len):__
 
@@ -150,7 +154,7 @@ Escribe los bytes de la secuencia de stream de bytes especificada en un arreglo 
 __void flush():__
 
 Borra el flujo de salida almacenado en buffer.
-Vacia los datos de una secuencia y la envia a otra. 
+Vacía los datos de una secuencia y la envía a otra. 
 Se necesita si se ha conectado una secuencia con otra.
 
 #### **Repaso**
@@ -173,7 +177,7 @@ Se necesita si se ha conectado una secuencia con otra.
 ### Tarea 
 ---
 
-* Abstraccion funcional, contextual, parametrica y de datos { concierto }
+* Abstracción funcional, contextual, parametrica y de datos { concierto }
 * Comic
 * Networking.- ( Solo Mapa Conceptual )
     * Mapa conceptual (No resumen)
@@ -188,10 +192,6 @@ Se necesita si se ha conectado una secuencia con otra.
     * URL
     * Http/Https
 
-**UNIDAD #3 – INTRODUCCIÓN A NETWORKING INTRODUCCIÓN A NETWORKING**
----
-
-asdasd
 
 
 
