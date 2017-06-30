@@ -1,0 +1,136 @@
+<h2 id="planificación-de-threads"><strong>Planificación De Threads</strong></h2>
+<p>Un hilo demonio en Java es un hilo proveedor de servicios que proporciona servicios al hilo de usuario.</p>
+<p>Su vida depende de los demas hilos, es decir si todos los demas hilos se mueren la JVM lo termina automáticamente.</p>
+<p>Hay muchos hilos demonios en java que se ejecutan automáticamente. Garbage Collector, finalizer, etc.</p>
+<p>JConsole en el simbolo del sistema, proporciona la información sobre las clases cargadas, uso de memoria, ejecución de hilos etc.</p>
+<p><strong>Puntos importantes</strong></p>
+<p>Un hilo en Java proporciona servicios a los hilos para brindar soporte a tareas en segundo plano.</p>
+<p>Su vida depende de los hilos de usuario. Es un hilo de baja prioridad.</p>
+<p><em><strong>Java.lang.Thread:</strong></em> Provee dos métodos para el demonio:</p>
+<ol style="list-style-type: decimal">
+<li><em><strong>public setDaemon(boolean status):</strong></em> Es usado para marcar el hilo actual, como un hilo demonio.</li>
+<li><em><strong>public boolean isDaemon():</strong></em> Revisa si el hilo actual es un demonio.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package</span><span class="im"> javaadvanced.Jueves;</span>
+
+<span class="kw">import static</span><span class="im"> java.lang.Thread.MAX_PRIORITY;</span>
+<span class="kw">import static</span><span class="im"> java.lang.Thread.MIN_PRIORITY;</span>
+<span class="kw">import static</span><span class="im"> java.lang.Thread.NORM_PRIORITY;</span>
+
+<span class="co">/**</span>
+ <span class="co">*</span>
+ <span class="co">* </span><span class="kw">@author </span>Ramses Santos
+ <span class="co">*/</span>
+<span class="kw">public</span> <span class="kw">class</span> ThreadD <span class="kw">extends</span> <span class="bu">Thread</span>{
+    
+    <span class="at">@Override</span>
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>(){
+        <span class="kw">if</span>(<span class="bu">Thread</span>.<span class="fu">currentThread</span>().<span class="fu">isDaemon</span>()){
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Tenemos un demonio aqui.&quot;</span>);
+        }
+        <span class="kw">else</span>{
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Ah no es un hilo de usuario.&quot;</span>);
+        }
+    }
+    
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {
+        ThreadD t1 = <span class="kw">new</span> <span class="fu">ThreadD</span>(), t2 = <span class="kw">new</span> <span class="fu">ThreadD</span>(), t3 = <span class="kw">new</span> <span class="fu">ThreadD</span>();
+        
+        t1.<span class="fu">setDaemon</span>(<span class="kw">true</span>);
+        t1.<span class="fu">start</span>();
+        t2.<span class="fu">start</span>();
+        t3.<span class="fu">start</span>();
+    }
+}</code></pre></div>
+<h2 id="sincronización">### <strong>Sincronización</strong></h2>
+<p>La sincronización en JAVA es la capacidad de controlar el acceso de multiples hilos en cualquier recurso compartido.</p>
+<p>La sincronización es la mejor opción cuando queremos permitir que solo un hilo pueda acceder a recursos compartidos.</p>
+<p>La sincronización es principalmente usada para: 1. Prevenir la interferencia de hilos. 2. Prevenir problemas de inconsistencia.</p>
+<p><strong>Tipos de Sincronización:</strong> 1. Procesos 2. Hilos: Mutuamente Excluyentes 1. Método Sincronizado. 2. Bloqueo Sincronizado. 3. Sincronización Estática.</p>
+<p><strong>Cooperación:</strong> Comunicación entre hilos. Exclusión Mutua: Ayuda a prevenir que los hilos interfieran entre si mientras comparten información.</p>
+<p><strong>Bloqueo:</strong> La sincronización se basa en una entidad interna conocida como lick o monito. Cada objeto tiene un bloque asociado a el.</p>
+<p>Por convención un hilo necesita un acceso consistente a los campos de un objeto, tiene que adquirir el bloqueo del objeto antes de acceder a ellos y a continuación liberar el bloqueo cuando se hace con ellos.</p>
+<p>Desde JAVA 5, el paquete <em><strong>java.util.concurrent.locks</strong></em> contiene varias implementaciones de bloqueo.</p>
+<h2 id="outputstream-vs-inputstream"><strong>OutputStream vs InputStream</strong></h2>
+<h2 id="java-io">### <strong>Java I/O</strong></h2>
+<p>Entrada y Salida.</p>
+<p>Se utiliza para procesar la entrada y salida. En JAVA se utiliza el concepto Stream.</p>
+<p>El paquete <em><strong>java.io</strong></em> contiene todas las clases necesarias para realizar operaciones entrada y salida.</p>
+<p>Podemos realizar el manejo de archivos a traves de JAVA I/O API.</p>
+<h2 id="stream">### <strong>Stream</strong></h2>
+<p>Es un flujo de datos, que esta compuesto por bytes. Se llama stream porque es como un flujo de agua que sigue corriendo.</p>
+<p>En JAVA existen 3 streams que se crean para nuestro uso automaticamente.</p>
+<ol style="list-style-type: decimal">
+<li><strong>System.out:</strong> Flujo de salida estandar.</li>
+<li><strong>System.in:</strong> Flujo de entrada estandar.</li>
+<li><strong>System.err:</strong> Flujo de errores estandar.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"> <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;Error&quot;</span>);
+ <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">print</span>(<span class="st">&quot;Error&quot;</span>);</code></pre></div>
+<h2 id="outputstream-vs-inputstream-1">### <strong>OutputStream vs InputStream</strong></h2>
+<p>Input: Lee.</p>
+<p>Output: Escribe.</p>
+<h2 id="bufferedoutputstream">#### <strong>BufferedOutputStream</strong></h2>
+<p>La clase JAVA BufferedOutputStream se utiliza para almacenar en un buffer un stream de salida.</p>
+<p>Internamente utiliza un buffer para almacenar datos directamente en un Stream.</p>
+<p>Añade mas eficiencia que escribir datos de manera directa en un flujo.</p>
+<p>Por lo tanto logra un mejor rendimiento.</p>
+<p>Tiene 2 constructores:</p>
+<p><strong>BufferedOutputStream(OutputStream os):</strong></p>
+<p>Crea un nuevo flujo de salida almacenando en buffer. Que se utiliza para escribir los datos en el stream especificado.</p>
+<p><strong>BufferedOutputStream(OutputStream os, int size):</strong></p>
+<p>Crea un nuevo flujo de salida que será almacenado en buffer el cual se utiliza para escribir los datos en el stream especificando el tamaño del bufer.</p>
+<h2 id="métodos">#### <strong>Métodos:</strong></h2>
+<p><strong>void write(int b):</strong></p>
+<p>Escribe el byte especificando en el stream de salida almacenado en buffer.</p>
+<p><strong>void write(byte[] b, int off, int len):</strong></p>
+<p>Escribe los bytes de la secuencia de stream de bytes especificada en un arreglo de bytes. Comienza con el desplazamiento dado.</p>
+<p><strong>void flush():</strong></p>
+<p>Borra el flujo de salida almacenado en buffer. Vacía los datos de una secuencia y la envía a otra. Se necesita si se ha conectado una secuencia con otra.</p>
+<h2 id="repaso">#### <strong>Repaso</strong></h2>
+<ul>
+<li>Callbacks</li>
+<li>Propiedades</li>
+<li>MultiTask != MultiHilo</li>
+<li>Clases Anonimas</li>
+<li>Syncronized</li>
+<li><p>Java.IO</p></li>
+<li>FileInputStream</li>
+<li>FileOutputStream</li>
+<li>BufferedInputStream</li>
+<li>BufferedOutputStream</li>
+<li><p>SequenceInputStream</p></li>
+</ul>
+<h2 id="tarea">### Tarea</h2>
+<ul>
+<li>Abstracción funcional, contextual, parametrica y de datos { concierto }</li>
+<li>Comic</li>
+<li>Networking.- ( Solo Mapa Conceptual )
+<ul>
+<li>Mapa conceptual (No resumen)</li>
+<li>TCP/IP</li>
+<li>Datagramas</li>
+<li>Sockets</li>
+<li>Cliente/Servidor</li>
+<li>Protocolos</li>
+<li>Connection_Oriented</li>
+<li>Connection_Less</li>
+<li>Peticiones/Get/Post</li>
+<li>URL</li>
+<li>Http/Https</li>
+</ul></li>
+</ul>
+<h2 id="repaso-1">### Repaso</h2>
+<ul>
+<li>Ip Address
+<pre> asdasdasdasdasdas
+asdasd
+asdasd 
+</pre></li>
+<li>Protocol</li>
+<li>Port Number</li>
+<li>MAC Address</li>
+<li>Connection-Oriented and Connection-Less Protocol</li>
+<li>Socket</li>
+</ul>
+<p>DatagramPacket y DatagramSocket</p>

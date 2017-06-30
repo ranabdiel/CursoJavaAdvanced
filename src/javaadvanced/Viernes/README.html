@@ -1,0 +1,25 @@
+<h2 id="titulo">TITULO</h2>
+<h2 id="networking">### NetWorking</h2>
+<p>Es un concepto de conectividad entre 2 o mas dispositivos juntos, que comparten recusos.</p>
+<p>Programacion de socnherts proportciona la facilidad de copmártir datos entre diferentes dispositivos.</p>
+<p>Ventajas del networking JAVA * Compartir recursos * centralizar la gstion del software</p>
+<p>Conceptos clave:</p>
+<p>DireccionIp: numero dinamico asignado a un nodo de iuna red, compuesto por ovcteros que ban del 0 al 255. Es una direccion logica que pouede sser cambiada.</p>
+<p>Protocolo: conunto de reglas para establecer la comunicacion: Ej. FTP, TCP, Telnet, SMTP, POP</p>
+<p>Puerto: Esta asociado a la direccion ip para la comunicacion entre aplicaciones.</p>
+<p>MAC: (Media access control) Identificador unico de NIC (Network Interface Controller). Un nodo de una red puede tener multiples NIC pero solo uina MAC. Direccion fisica estatica.</p>
+<p>Oriented Connection Protocol: Es un protocolo de tipo TCP, TCP/IP, confiable pero lento. El acuse de recibo es enviado por el receptor.</p>
+<p>Connection Less Protocol: El receptor no envia el acuse de recibo. Es rrapido, sin embargo no es confgiable, pueden o no llegar a los paquetes. Ej. UDP.</p>
+<p>CSocket: Punto final en una conexion bidireccional.</p>
+<p>La programacion de sockets se utiliza para la comuinicacion entre alicaciones que se ejecutan en diferentes JREs (Java Runtime Enviroment).</p>
+<p>La programacion de Java Socket ouede estar bajo ambos protocolos (OCP, OCL). Las clases Java Socket y ServerSocket se utilizan para la programación orientada a la conexion.</p>
+<p>Las clases DatagramSocket y DatagramPacket son usadas para la programación de Socket sin conexión.</p>
+<p>El cliente en la programacion necesita saber: * Ip Address del server. * Port Number * Socket Class</p>
+<h2 id="socket-class">### Socket Class</h2>
+<p>El socket es un punto final para las comunicaciones entre dispositivos.</p>
+<p>Metodos:</p>
+<p>public inputStream getInpútStream() : Regresa el is adjunto con el socket. public OutputStream getOutputStream: Regresa el os adjuntyo al socket.</p>
+<p>public syncronized void close(): Cirrra el socket.</p>
+<p>Server Socket</p>
+<p>Metodos:</p>
+<p>public Socket accept(): Establece la conexin entrante. public synchronized void close(): Cierra la conexion del servidor.</p>

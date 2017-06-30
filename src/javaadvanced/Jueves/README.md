@@ -192,7 +192,21 @@ Se necesita si se ha conectado una secuencia con otra.
     * URL
     * Http/Https
 
+### Repaso
+---
 
+* Ip Address
+    <pre> asdasdasdasdasdas
+    asdasd
+    asdasd 
+    </pre>
+* Protocol
+* Port Number
+* MAC Address
+* Connection-Oriented and Connection-Less Protocol
+* Socket
+
+DatagramPacket y DatagramSocket
 
 
 
